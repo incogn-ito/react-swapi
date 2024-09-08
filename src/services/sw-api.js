@@ -1,13 +1,8 @@
-const BASE_URL = 'https://swapi.dev/api/'
+const baseUrl = 'https://swapi.dev/api/'
 
-// Fetch all starships using async/await
 export async function getAllStarships() {
-  try {
-    const response = await fetch(`${BASE_URL}starships/`)
-    return handleResponse(response)
-  } catch (error) {
-    handleError(error)
-  }
+  const res = await fetch(`${baseUrl}/starships/`)
+  return res.json()
 }
 
 // export async function getMonsterList() {
