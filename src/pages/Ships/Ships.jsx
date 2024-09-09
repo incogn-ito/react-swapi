@@ -11,7 +11,7 @@ const Starships = () => {
   useEffect(() => {
     const fetchStarships = async () => {
       const starshipData = await getAllStarships()
-      setStarships(starshipData)
+      setStarships(starshipData.results)
     }
     fetchStarships()
   }, [])
@@ -24,7 +24,7 @@ const Starships = () => {
       {starships.map(starship =>
         <div className="link-container" key={starship._id}>
           <Link to={`/starships/${starship._id}`}>
-            {ship.name}
+            {starship.name}
           </Link>
         </div>
       )}
