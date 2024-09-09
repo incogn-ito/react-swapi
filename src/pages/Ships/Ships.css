@@ -1,0 +1,39 @@
+/* General styling for the main container */
+.starships {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* Styling for the individual link containers */
+  .link-container {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+  }
+  
+  /* Link styling */
+  .link-container a {
+    color: #ab1592; /* Link color */
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Change color and slightly scale up when hovered */
+  .link-container a:hover {
+    color: #ff4500; /* Hover color */
+    transform: scale(1.05); /* Slight scaling on hover */
+  }
+  
+  /* Add underline when focused */
+  .link-container a:focus {
+    text-decoration: underline;
+    outline: none;
+  }
+  

@@ -5,6 +5,9 @@ import { Link } from "react-router-dom"
 // services
 import { getAllStarships } from "../../services/sw-api"
 
+// css
+import './Ships.css'
+
 const Starships = () => {
   const [starships, setStarships] = useState([])
 
@@ -21,15 +24,16 @@ const Starships = () => {
   return (
     <main className="starships">
       <h1>Starships</h1>
-      {starships.map(starship =>
-        <div className="link-container" key={starship._id}>
-          <Link to={`/starships/${starship._id}`}>
-            {starship.name}
-          </Link>
-        </div>
-      )}
+      {starships.map((starship) => {
+        const starshipId = starship.url.split("/").slice(-2, -1)[0]
+        return (
+          <div className="link-container" key={starshipId}>
+            <Link to={`/starships/${starshipId}`}>{starship.name}</Link>
+          </div>
+        );
+      })}
     </main>
-  )
-}
+  );
+};
 
 export default Starships
