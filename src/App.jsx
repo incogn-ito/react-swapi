@@ -5,7 +5,7 @@ import NavBar from './components/NavBar/NavBar'
 
 // pages
 import Ships from './pages/Ships/Ships'
-// import ShipDetails from './pages/ShipDetails/ShipDetails'
+import ShipDetails from './pages/ShipDetails/ShipDetails'
 
 // css
 import './App.css'
@@ -17,6 +17,7 @@ function App() {
         <NavBar />
         <Routes>
           <Route path='/starships' element={<Ships />} />
+          <Route path='/starships/:starshipId' element={<ShipDetails />} />
         </Routes>
       </>
     )

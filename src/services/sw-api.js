@@ -5,17 +5,7 @@ export async function getAllStarships() {
   return res.json()
 }
 
-// export async function getMonsterList() {
-//   const res = await fetch(`${baseUrl}/api/monsters`)
-//   return res.json()
-// }
-
-// export async function getMonster(monsterId) {
-//   const res = await fetch(`${baseUrl}/api/monsters/${monsterId}`)
-//   return res.json()
-// }
-
-// export async function getSpells() {
-//   const res = await fetch(`${baseUrl}/api/spells`)
-//   return res.json()
-// }
+export async function getStarship(starshipId) {
+  const res = await fetch(`${baseUrl}/api/starships/${starshipId}`)
+  return res.json()
+}
