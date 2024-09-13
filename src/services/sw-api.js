@@ -6,6 +6,6 @@ export async function getAllStarships() {
 }
 
 export async function getStarship(starshipId) {
-  const res = await fetch(`${baseUrl}/api/starships/${starshipId}`)
+  const res = await fetch(`${baseUrl}/starships/${starshipId}`)
   return res.json()
 }

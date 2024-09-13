@@ -9,15 +9,13 @@ import { getStarship } from "../../services/sw-api"
 import './ShipDetails.css'
 
 const StarshipDetails = () => {
-  const [starshipDetails, setStarshipDetails] = useState({})
+  const [starshipDetails, setStarshipDetails] = useState([])
   const { starshipId } = useParams()
 
   useEffect(() => {
     const fetchStarshipDetails = async () => {
       try {
         const starshipData = await getStarship(starshipId)
-        console.log('Starship ID:', starshipId) 
-        console.log('Starship Data:', starshipData) 
         setStarshipDetails(starshipData)
       } catch (error) {
         console.error('Error fetching starship details:', error)
@@ -27,7 +25,8 @@ const StarshipDetails = () => {
   }, [starshipId])
 
 // loading message -- but can't get API to show the details
-//   if (!starshipDetails.name) return <h1>Loading starship details...</h1>
+if (!starshipDetails) 
+  return <h1>Loading starship details...</h1>
 
   return (
     <main className="starship-details">

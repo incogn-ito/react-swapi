@@ -19,7 +19,8 @@ const Starships = () => {
     fetchStarships()
   }, [])
 
-  if (!starships.length) return <h1>Loading starships...</h1>
+  if (!starships.length) 
+    return <h1>Loading starships...</h1>
 
   return (
     <main className="starships">
